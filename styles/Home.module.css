@@ -1,0 +1,79 @@
+/* 响应式容器 */
+.container {
+  max-width: 375px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+}
+
+.mainContent {
+  padding-bottom: 130px;
+}
+
+.content {
+  flex: 1;
+  margin: 25px 20px;
+}
+
+.sectionTitle {
+  padding: 25px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.sectionTitle::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(0, 123, 255, 0.5) 0%, transparent 100%);
+  margin-left: 15px;
+}
+
+.sectionTitle i {
+  color: #007bff;
+  font-size: 22px;
+  padding: 10px;
+  background: rgba(0, 123, 255, 0.2);
+  border-radius: 50%;
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+/* PC端响应式适配 */
+@media (min-width: 768px) {
+  .container {
+    max-width: 375px;
+    box-shadow: 0 0 50px rgba(0, 123, 255, 0.3);
+    border-radius: 25px;
+    overflow: hidden;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .mainContent {
+    border-radius: 0 0 25px 25px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}
+
+/* 响应式优化 */
+@media (max-width: 320px) {
+  .content {
+    margin: 20px 15px;
+  }
+}
